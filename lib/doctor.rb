@@ -4,10 +4,11 @@ class Doctor
               :education,
               :salary
 
+              # Changed parens to brackets to avoid needing #fetch method
   def initialize(details)
-    @name = details.fetch(:name)
-    @specialty = details.fetch(:specialty)
-    @education = details.fetch(:education)
-    @salary = details.fetch(:salary)
+    @name = details[:name]
+    @specialty = details[:specialty]
+    @education = details[:education]
+    @salary = details[:salary]
   end
 end
