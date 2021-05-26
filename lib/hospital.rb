@@ -6,4 +6,8 @@ class Hospital
     @chief_of_surgery = chief_of_surgery
     @doctors = doctors
   end
+
+  def total_salary
+    
+  end
 end
