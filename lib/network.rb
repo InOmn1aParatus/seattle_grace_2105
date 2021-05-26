@@ -10,5 +10,10 @@ class Network
     @hospitals << hospital
   end
 
-  
+  def highest_paid_doctor
+    all_doctors = []
+    @hospitals.each { |hospital| all_doctors << hospital.doctors }
+    highest = all_doctors.flatten!.max_by { |doctor| doctor.salary }
+    highest
+  end
 end
