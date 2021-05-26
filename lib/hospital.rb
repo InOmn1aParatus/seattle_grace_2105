@@ -8,9 +8,12 @@ class Hospital
   end
 
   def total_salary
-    total = 0
-    @doctors.each { |doctor| total += doctor.salary}
-    total
+    # total = 0
+    # @doctors.each { |doctor| total += doctor.salary}
+    # total
+    @doctors.sum do |doctor|
+      doctor.salary
+    end
   end
 
   def lowest_paid_doctor
