@@ -16,4 +16,8 @@ class Network
     highest = all_doctors.flatten!.max_by { |doctor| doctor.salary }
     highest
   end
+
+  def doctors_by_hospital
+    doctor_hash = Hash.new    
+  end
 end
