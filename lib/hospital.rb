@@ -9,10 +9,18 @@ class Hospital
 
   def total_salary
     total = 0
-    @doctors.each do |doctor|
-      total += doctor.salary
-    end
+    @doctors.each { |doctor| total += doctor.salary}
     total
+  end
+
+  def lowest_paid_doctor
+    @doctors.find { |doctor|  }
+  end
+
+  def specialties
+    specialties = []
+    @doctors.each { |doctor| specialties << doctor.specialty }
+    specialties
   end
 end
 
