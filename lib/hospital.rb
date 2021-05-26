@@ -24,5 +24,3 @@ class Hospital
     specialties
   end
 end
-
-# require 'pry'; binding.pry
