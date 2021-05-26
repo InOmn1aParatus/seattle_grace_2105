@@ -19,11 +19,10 @@ class Hospital
   def lowest_paid_doctor
     lowest = @doctors.min_by { |doctor| doctor.salary }
     lowest.name
-  end
+  end # Can also add '.name' onto 'end'
 
   def specialties
-    specialties = []
-    @doctors.each { |doctor| specialties << doctor.specialty }
-    specialties
+    @doctors.map { |doctor| doctor.specialty }
   end
+  # Rewrote to avoid using an aggregator
 end
