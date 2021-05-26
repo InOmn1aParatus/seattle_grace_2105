@@ -27,23 +27,33 @@ RSpec.describe Network do
       @miranda = Doctor.new({name: "Miranda Bailey", specialty: "General Surgery", education: "Stanford University", salary: 150_000})
       @derek = Doctor.new({name: "Derek Sheperd", specialty: "Neurosurgery", education: "University of Pennsylvania", salary: 125_000})
       @grey_sloan = Hospital.new("Grey Sloan Memorial", "Larry Maxwell", [@miranda, @derek])
-      @gsmn.add_hospital(@seattle_grace)
-      @gsmn.add_hospital(@grey_sloan)
     end
 
     it 'adds hospitals to network' do
+      @gsmn.add_hospital(@seattle_grace)
+      @gsmn.add_hospital(@grey_sloan)
+
       expect(@gsmn.hospitals).to eq([@seattle_grace, @grey_sloan])
     end
 
     it 'reports highest paid doctor' do
+      @gsmn.add_hospital(@seattle_grace)
+      @gsmn.add_hospital(@grey_sloan)
+
       expect(@gsmn.highest_paid_doctor).to eq(@miranda)
     end
 
-    xit 'lists doctors by hospital' do
-      expect(@gsmn.doctors_by_hospital).to eq({
+    it 'lists doctors by hospital' do
+      @gsmn.add_hospital(@seattle_grace)
+      @gsmn.add_hospital(@grey_sloan)
+      # Consider writing it like this
+
+      expected = {
         @seattle_grace => ["Meredith Grey", "Alex Karev"],
         @grey_sloan    => ["Miranda Bailey", "Derek Sheperd"]
-                  })
+      }
+
+      expect(@gsmn.doctors_by_hospital).to eq(expected)
     end
   end
 end
