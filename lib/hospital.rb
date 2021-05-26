@@ -8,6 +8,12 @@ class Hospital
   end
 
   def total_salary
-    
+    total = 0
+    @doctors.each do |doctor|
+      total += doctor.salary
+    end
+    total
   end
 end
+
+# require 'pry'; binding.pry
